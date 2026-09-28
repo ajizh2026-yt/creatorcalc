@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ajizh2026-yt.github.io/creatorcalc/sitemap.xml
