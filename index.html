@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CreatorCalc — Free Creator Calculators</title>
+<meta name="description" content="Free creator calculators for YouTube earnings, TikTok estimates, engagement rate, sponsorship rates, CPM and CPC.">
+<link rel="canonical" href="https://ajizh2026-yt.github.io/creatorcalc/">
+<meta property="og:title" content="CreatorCalc — Free Creator Calculators">
+<meta property="og:description" content="Fast, free tools for creators, freelancers and marketers.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#08090d;--panel:#11131a;--line:#282c39;--text:#f7f8fb;--muted:#a6adbc;--a:#8b7cff;--b:#55e6c1;--max:1100px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% 0,#1b1740,transparent 35%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit;text-decoration:none}
+header,main,footer{max-width:var(--max);margin:auto;padding-left:22px;padding-right:22px}header{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0d}.brand{font-weight:850;font-size:20px}.brand span{color:var(--b)}nav{display:flex;gap:22px;color:#c7cad4;font-size:14px}
+.hero{padding-top:78px;padding-bottom:55px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--b);font-weight:800}.hero h1{font-size:clamp(45px,7vw,75px);line-height:1.02;letter-spacing:-3px;margin:12px 0 20px}.hero h1 span{color:var(--a)}.hero p{color:var(--muted);max-width:620px;font-size:18px}.card{background:linear-gradient(145deg,#171827,#101219);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 25px 80px #0008}.big{font-size:52px;font-weight:850;margin:8px 0 18px}.bars{height:110px;display:flex;align-items:end;gap:9px}.bars i{flex:1;background:linear-gradient(var(--a),var(--b));border-radius:5px 5px 2px 2px}.muted{color:var(--muted)}.tools{padding:65px 0}.tools h2{font-size:38px;letter-spacing:-1px;margin:5px 0 28px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.tool{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}.tool h3{margin:0 0 7px}.tool p{color:var(--muted);font-size:14px;min-height:68px}.tool button{width:100%;padding:12px;border:0;border-radius:9px;background:var(--a);color:white;font-weight:800;cursor:pointer}
+.calculator{margin-top:35px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}.box h2{margin-top:0}.box label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}.box input{width:100%;padding:12px;border:1px solid #353a49;border-radius:9px;background:#090b10;color:white;font-size:15px}.result{margin-top:17px;background:#0c1212;border:1px solid #28443e;padding:18px;border-radius:12px}.result strong{display:block;font-size:31px;color:var(--b)}.result small{color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:30px;padding-bottom:45px;color:#777e8d;font-size:13px}
+@media(max-width:760px){nav{display:none}.hero,.calculator{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:55px}.hero h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="#">Creator<span>Calc</span></a><nav><a href="#tools">Tools</a><a href="#about">About</a></nav></header>
+<main>
+<section class="hero"><div><div class="eyebrow">FREE CREATOR TOOLS</div><h1>Know your numbers.<br><span>Grow smarter.</span></h1><p>Fast calculators for creators, freelancers and marketers. No signup and no spreadsheet headaches. Your calculations run in your browser.</p></div><div class="card"><div class="eyebrow">EXAMPLE ESTIMATE</div><div class="big">$1,250</div><div class="bars"><i style="height:35%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:72%"></i><i style="height:62%"></i><i style="height:88%"></i><i style="height:100%"></i></div><small class="muted">Illustrative only — actual results vary.</small></div></section>
+<section id="tools" class="tools"><div class="eyebrow">THE TOOLBOX</div><h2>Creator calculators</h2><div class="grid">
+<div class="tool"><h3>YouTube Earnings</h3><p>Estimate ad revenue from monthly views and RPM.</p><button onclick="openCalc('youtube')">Calculate →</button></div>
+<div class="tool"><h3>TikTok Earnings</h3><p>Model a hypothetical payout using views and an assumed RPM.</p><button onclick="openCalc('tiktok')">Calculate →</button></div>
+<div class="tool"><h3>Engagement Rate</h3><p>Calculate likes, comments and shares against reach.</p><button onclick="openCalc('engagement')">Calculate →</button></div>
+<div class="tool"><h3>Sponsorship Rate</h3><p>Create a starting sponsored-post price framework.</p><button onclick="openCalc('sponsor')">Calculate →</button></div>
+<div class="tool"><h3>CPM Calculator</h3><p>Calculate cost per 1,000 advertising impressions.</p><button onclick="openCalc('cpm')">Calculate →</button></div>
+<div class="tool"><h3>CPC Calculator</h3><p>Calculate average cost per click.</p><button onclick="openCalc('cpc')">Calculate →</button></div>
+</div>
+<div id="calculator" class="calculator"></div></section>
+<section id="about" class="card" style="margin-bottom:70px"><div class="eyebrow">ABOUT CREATORCALC</div><h2>Useful numbers without the clutter.</h2><p class="muted">CreatorCalc provides educational estimates. Platform payouts, advertising costs and sponsorship prices vary. Always verify important financial decisions against current platform documentation and your own data.</p><p class="muted">Calculations are performed locally in your browser; no account is required.</p></section>
+</main>
+<footer>© 2026 CreatorCalc · Free educational calculator tools · Estimates are not guarantees of income.</footer>
+<script>
+const root=document.getElementById('calculator');
+const templates={
+youtube:['YouTube Earnings','Monthly views','100000','Estimated RPM (USD)','4','Calculate earnings','youtube'],
+tiktok:['TikTok Earnings','Eligible monthly views','500000','Assumed RPM (USD)','0.50','Calculate estimate','tiktok'],
+engagement:['Engagement Rate','Likes','2500','Comments','150','Calculate rate','engagement'],
+sponsor:['Sponsorship Rate','Followers','25000','Engagement rate (%)','4','Estimate rate','sponsor'],
+cpm:['CPM Calculator','Ad spend (USD)','500','Impressions','100000','Calculate CPM','cpm'],
+cpc:['CPC Calculator','Ad spend (USD)','250','Clicks','1000','Calculate CPC','cpc']
+};
+function openCalc(type){
+let t=templates[type];
+if(type==='engagement') root.innerHTML=`<div class="box"><h2>${t[0]}</h2><label>Likes</label><input id="likes" value="2500" type="number"><label>Comments</label><input id="comments" value="150" type="number"><label>Shares</label><input id="shares" value="300" type="number"><label>Reach</label><input id="reach" value="50000" type="number"><button onclick="calc('engagement')">${t[5]}</button><div id="result" class="result"></div></div><div class="box"><h2>Formula</h2><p class="muted">(Likes + Comments + Shares) ÷ Reach × 100.</p><p class="muted">Different platforms use different definitions.</p></div>`;
+else if(type==='sponsor') root.innerHTML=`<div class="box"><h2>${t[0]}</h2><label>Followers</label><input id="followers" value="25000" type="number"><label>Engagement rate (%)</label><input id="er" value="4" type="number" step=".1"><label>Base rate per 1,000 followers (USD)</label><input id="base" value="15" type="number" step=".5"><button onclick="calc('sponsor')">${t[5]}</button><div id="result" class="result"></div></div><div class="box"><h2>Remember</h2><p class="muted">Niche, audience quality, geography, usage rights, exclusivity and deliverables can materially change a real quote.</p></div>`;
+else root.innerHTML=`<div class="box"><h2>${t[0]}</h2><label>${t[1]}</label><input id="a" value="${t[2]}" type="number"><label>${t[3]}</label><input id="b" value="${t[4]}" type="number" step=".01"><button onclick="calc('${type}')">${t[5]}</button><div id="result" class="result"></div></div><div class="box"><h2>About this estimate</h2><p class="muted">This is a mathematical model, not an official platform payout or market quote.</p></div>`;
+calc(type); root.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function money(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(n)}
+function calc(type){
+let r=document.getElementById('result'),v=id=>parseFloat(document.getElementById(id).value)||0;
+if(type==='youtube'){let x=v('a')*v('b')/1000;r.innerHTML=`<small>Estimated monthly revenue</small><strong>${money(x)}</strong><small>Annualized: ${money(x*12)}</small>`}
+if(type==='tiktok'){let x=v('a')*v('b')/1000;r.innerHTML=`<small>Illustrative estimated revenue</small><strong>${money(x)}</strong><small>Not an official TikTok payout.</small>`}
+if(type==='engagement'){let total=v('likes')+v('comments')+v('shares'),rate=v('reach')?total/v('reach')*100:0;r.innerHTML=`<small>Engagement rate by reach</small><strong>${rate.toFixed(2)}%</strong><small>Total interactions: ${total.toLocaleString()}</small>`}
+if(type==='sponsor'){let p=v('followers')/1000*v('base')*(1+Math.min(v('er'),10)/100);r.innerHTML=`<small>Suggested starting range</small><strong>${money(p*.8)} – ${money(p*1.2)}</strong><small>Framework only.</small>`}
+if(type==='cpm'){let x=v('a')/v('b')*1000;r.innerHTML=`<small>CPM</small><strong>${money(x)}</strong><small>Cost per 1,000 impressions.</small>`}
+if(type==='cpc'){let x=v('a')/v('b');r.innerHTML=`<small>CPC</small><strong>${money(x)}</strong><small>Average cost per click.</small>`}
+}
+</script>
+</body>
+</html>
